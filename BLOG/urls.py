@@ -21,7 +21,8 @@ from BLOG import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('posts.urls'))
+    path('',include('posts.urls')),
+    path('users/',include('users.urls'))
 
 ]
 

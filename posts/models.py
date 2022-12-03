@@ -15,9 +15,10 @@ class Hashtag(models.Model):
 
 
 class Post(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=255)
-    desciption = models.TextField()
-    hashtag = models.ForeignKey(Hashtag,on_delete=models.CASCADE, null=True,related_name='posts')
+    description = models.TextField()
+    hashtags = models.ManyToManyField(Hashtag)
 
     def __str__(self):
         return self.title
